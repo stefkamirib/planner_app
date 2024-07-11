@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+    <script>dayjs.locale('pt-br')</script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+    <body>
+        <div id="aplicacao">
+            <form onsubmit="salvarAtividade(event)">
+
+                <div id="destino" class="card">
+                    Florianópolis, SC
+                </div>
+
+                <div class="campos">
+                    <div class="campos__preenchimento">
+                        <input type="text" placeholder="Qual a atividade?" name="atividade" required>
+                    </div>
+
+                    <div class="campos__preenchimento">
+                        <select name="dia">
+                            <option value="2024-03-01">01 de feveiro</option>
+                        </select>
+                    </div>
+
+                    <div class="campos__preenchimento">
+                        <select name="hora">
+                            <option value="10:30">10:30</option>
+                        </select>
+                    </div>
+                </div>
+                <button>Salvar atividade</button>
+            </form>
+        
+            <main>
+                <h1> Atividades </h1>
+                <section></section>
+            </main>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+</html>

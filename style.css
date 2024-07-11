@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+:root {
+  --fonte-principal: 'Inter';
+}
+
+/* display-flex: permite colocar os elementos um ao lado do outro*/
+/* gap: distanciamento entre os elementos*/
+/* align-items: permite centralizar elementos ao centro*/
+/* :focus-within: permite adicionar um foco em um elemento(tipo um hover)*/
+
+
+html, select, input, button, option {
+  font-family: var(--fonte-principal);
+  background-color: #09090B;
+  color: white;
+}
+
+
+
+/* aplicacao */
+#aplicacao {
+  padding: 40px 20px;
+  max-width: 320px;
+  margin: auto;
+}
+
+
+/* Form */
+input, select {
+  all: unset; /*desativando qualquer outro filtro antes de aplicar a estlização*/
+}
+
+input, select, button {
+  width: 100%;
+}
+
+.campos {
+  display: grid;
+  gap: 8px;
+
+}
+
+.campos .campos__preenchimento {
+  padding: 18px;
+  background-color: #09090B;
+  border: 1px solid #27272A;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.campos__preenchimento:focus-within {
+  outline: 2px solid yellowgreen;
+}
+
+button {
+  margin-top: 12px;
+  border: none;
+  padding: 12px 20px;
+  background-color: #AFF445;
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+   
+  color: #132f00;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 8px;
+
+  width: 280px;
+  height: 64px;
+
+  background: #18181B;
+  /* shape */
+  box-shadow: 
+    0px 8px 8px rgba(0, 0, 0, 0.1), 
+    0px 4px 4px rgba(0, 0, 0, 0.1), 
+    0px 2px 2px rgba(0, 0, 0, 0.1), 
+    0px 0px 0px 1px rgba(0, 0, 0, 0.1), 
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03), 
+    inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+
+  /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 32px;
+}
