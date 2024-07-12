@@ -1,0 +1,25 @@
+@media (width > 1024px){
+    #aplicacao {
+      display: flex; /*caixa 'flex*/
+      max-width: 960px;
+      gap: 32px;
+  
+    }
+  
+    main {
+      margin-top: 0;
+      flex: 1; /*todo o conteúdo deve estar em uma caixa 'flex'*/
+    }
+  
+    h1 {
+      text-align: left;
+    }
+  
+    time.full {
+      display: block;
+    }
+  
+    time.short {
+      display: none;
+    }
+  }

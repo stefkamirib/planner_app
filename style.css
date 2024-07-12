@@ -7,6 +7,8 @@
 /* gap: distanciamento entre os elementos*/
 /* align-items: permite centralizar elementos ao centro*/
 /* :focus-within: permite adicionar um foco em um elemento(tipo um hover)*/
+/* position: absolute: permite agrupar elementos um sob o outro*/
+/*inset: 0 permite que um elemento (como a borda) preencha exatamente o espaço adequado*/
 
 
 html, select, input, button, option {
@@ -70,16 +72,13 @@ button {
   color: #132f00;
 }
 
+#destino {
+  padding: 20px;
+  /* Side */
+  margin-bottom: 32px;
+}
+
 .card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px 16px;
-  gap: 8px;
-
-  width: 280px;
-  height: 64px;
-
   background: #18181B;
   /* shape */
   box-shadow: 
@@ -89,12 +88,84 @@ button {
     0px 0px 0px 1px rgba(0, 0, 0, 0.1), 
     inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03), 
     inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+
     border-radius: 12px;
+}
+
+main {
+  margin-top: 32px;
+}
+
+/* Atividades */
+
+h1 {
+
+  /* identical to box height */
+  text-align: center;
+
+  color: #FAFAFA;
+  margin-bottom: 24px;
+
 
   /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 32px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
 }
+
+section {
+  display: grid;
+  gap: 10px;
+}
+
+section input[type="checkbox"]{
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+section .card {
+  position: relative;
+  padding: 10px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  animation: appear 2s; /*animation.css*/
+}
+
+/*Dinâmico do clique ao "checar" uma atividade*/
+section .card:has(:checked) .active, 
+section .card .inactive {
+  display: block;
+}
+
+section .card:has(:checked) .inactive,
+section .card .active{
+  display: none;
+}
+/*Fim do Dinâmico do clique ao "checar" uma atividade*/
+
+
+/*estilizando o primeiro nível de div da variável "criarItemAtividade"*/
+section .card > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+time {
+  font-size: 14px;
+  color: #A1A1A2;
+}
+
+time.full {
+  display: none;
+}
+
+/*responsividade*/
+
+/*em "responsivo.css"*/
